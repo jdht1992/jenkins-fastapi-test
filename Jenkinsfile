@@ -3,8 +3,8 @@ pipeline {
 
     stages {
         stage("Clone repo") {
-            steps {
-                checkout scm
+            steps { 
+                git 'https://github.com/jdht1992/jenkins-fastapi-test.git'
             }
         }
         stage("Install dependencies") {
@@ -23,6 +23,5 @@ pipeline {
                 sh '. env/bin/activate && python main.py &'
             }
         }
-
-}
+    }
 }
