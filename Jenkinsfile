@@ -4,7 +4,7 @@ pipeline {
     stages {
         stage("Clone repo") {
             steps { 
-                git 'https://github.com/jdht1992/jenkins-fastapi-test.git'
+                git branch: 'main', url: 'https://github.com/jdht1992/jenkins-fastapi-test.git'
             }
         }
         stage("Install dependencies") {
