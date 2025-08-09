@@ -25,5 +25,11 @@ pipeline {
                 echo 'FastAPI app should now be running.'
             }
         }
+        stage("Build Docker Image") {
+            steps {
+                echo 'Building Docker image...'
+                sh 'docker build -t fastapi-jenkins-image .'
+            }
+        }
     }
 }
